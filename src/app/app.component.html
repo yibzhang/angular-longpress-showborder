@@ -1,0 +1,17 @@
+<div style="text-align: center">
+  <div class="main-block" long-press (onLongPress)="borderControl()">
+
+    <div class="small-block" [ngClass]="{'block-opacity-on': borderFlag}"
+    *ngFor="let value of counter(20); let idx = index">
+    </div>
+
+    <div class="small-block" [ngClass]="{'block-opacity-on': borderFlag}"
+    *ngFor="let value of counter(20); let idx = index">
+    </div>
+
+  </div>
+</div>
+<!--
+<button long-press (onLongPress)="borderControl()">Border on/off</button>
+<input type="button" long-press (onLongPress)="borderControl()" value="Long press">
+-->

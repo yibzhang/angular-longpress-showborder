@@ -1,0 +1,29 @@
+.main-block{  
+  width: 1000px;
+  background: #3498db;
+  
+  padding: 0 0 5px 5px;
+  display: inline-block
+}
+
+.small-block{
+  height: 45px;
+  width: 45px;
+  background: #bdc3c7;
+
+  margin: 5px 5px 0 0;
+  float: left;
+}
+.small-block:after{
+  content: "";
+  height: 41px;
+  width: 41px;
+  
+  border-style: dashed;
+  border-width: 2px;
+  display: inline-block;
+  opacity: 0;
+}
+.small-block.block-opacity-on:after{
+  opacity: 1;
+}
