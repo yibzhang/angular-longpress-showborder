@@ -10,14 +10,23 @@ import {
   selector: '[long-press]'
 })
 export class LongPress {
+  private longPressTimeout: any;
+
   @Output()
   onLongPress = new EventEmitter();
 
   @HostListener('touchstart', ['$event'])
   @HostListener('mousedown', ['$event'])
   onMouseDown(event) {
-    setTimeout(()=>{
+    this.longPressTimeout = setTimeout(()=>{
       this.onLongPress.emit(event);
     }, 500);
+  }
+
+  @HostListener('touchend')
+  @HostListener('mouseup')
+  @HostListener('mouseleave')
+  longPressInterupt(){
+    clearTimeout(this.longPressTimeout);
   }
 }
